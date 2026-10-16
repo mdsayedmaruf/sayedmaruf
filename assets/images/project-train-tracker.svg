@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0f14"/>
+      <stop offset="100%" stop-color="#08080a"/>
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#FF6B2B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FF6B2B" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#27272a" stroke-width="0.75" stroke-opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  <rect width="800" height="450" fill="url(#glowGrad)"/>
+
+  <!-- Top Accent Stripe -->
+  <rect x="0" y="0" width="800" height="4" fill="#FF6B2B"/>
+
+  <!-- Main Illustration Content -->
+  
+        <!-- Mobile Device Outline -->
+        <rect x="250" y="70" width="300" height="340" rx="24" fill="#18181b" stroke="#3f3f46" stroke-width="2"/>
+        <rect x="360" y="80" width="80" height="6" rx="3" fill="#3f3f46"/>
+        <rect x="264" y="96" width="272" height="294" rx="14" fill="#09090b"/>
+        
+        <!-- App Map UI Header -->
+        <rect x="276" y="110" width="248" height="44" rx="8" fill="#18181b" stroke="#FF6B2B"/>
+        <text x="290" y="132" fill="#FF8F5C" font-size="11" font-family="monospace" font-weight="bold">TRAIN TRACKER BD</text>
+        <text x="290" y="146" fill="#a1a1aa" font-size="8" font-family="sans-serif">Suborna Express · ETA 14 Mins</text>
+        
+        <!-- Map Graphic -->
+        <path d="M 290 240 Q 360 170 430 200 T 500 230" fill="none" stroke="#3f3f46" stroke-width="8" stroke-linecap="round"/>
+        <path d="M 290 240 Q 360 170 430 200" fill="none" stroke="#FF6B2B" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="430" cy="200" r="10" fill="#FF6B2B"/>
+        <circle cx="430" cy="200" r="18" fill="#FF6B2B" opacity="0.25"/>
+        <circle cx="430" cy="200" r="4" fill="#ffffff"/>
+        
+        <!-- Info Pill -->
+        <rect x="276" y="270" width="248" height="50" rx="8" fill="#18181b" stroke="#27272a"/>
+        <text x="290" y="292" fill="#e4e4e7" font-size="10" font-family="sans-serif" font-weight="bold">Live Speed: 68 km/h</text>
+        <text x="290" y="306" fill="#4ade80" font-size="8" font-family="monospace">● GPS ACCURACY: 4 METERS</text>
+        
+
+  <!-- Bottom Details Overlay -->
+  <rect x="0" y="380" width="800" height="70" fill="#09090b" fill-opacity="0.85"/>
+  <line x1="0" y1="380" x2="800" y2="380" stroke="#27272a" stroke-width="1"/>
+
+  <!-- Category & Badges -->
+  <text x="32" y="410" fill="#FF6B2B" font-size="10" font-family="'Space Mono', monospace" font-weight="bold" letter-spacing="1.5">FLUTTER · GPS TELEMETRY</text>
+  <text x="32" y="432" fill="#f4f4f5" font-size="14" font-family="'PT Sans', sans-serif" font-weight="bold">Train Tracker — Real-Time GPS</text>
+
+  <!-- Pill Badge -->
+  <rect x="660" y="402" width="108" height="26" rx="6" fill="#FF6B2B" fill-opacity="0.12" stroke="#FF6B2B" stroke-width="1"/>
+  <text x="714" y="419" fill="#FF6B2B" font-size="9" font-family="'Space Mono', monospace" font-weight="bold" text-anchor="middle" letter-spacing="1">ANDROID APP</text>
+</svg>

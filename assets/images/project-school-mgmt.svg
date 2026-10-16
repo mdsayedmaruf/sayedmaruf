@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0f14"/>
+      <stop offset="100%" stop-color="#08080a"/>
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#27272a" stroke-width="0.75" stroke-opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  <rect width="800" height="450" fill="url(#glowGrad)"/>
+
+  <!-- Top Accent Stripe -->
+  <rect x="0" y="0" width="800" height="4" fill="#a855f7"/>
+
+  <!-- Main Illustration Content -->
+  
+        <!-- Web Dashboard Browser -->
+        <rect x="180" y="80" width="440" height="290" rx="14" fill="#09090b" stroke="#a855f7" stroke-width="1.5"/>
+        <rect x="180" y="80" width="440" height="34" rx="14" fill="#18181b"/>
+        <circle cx="204" cy="97" r="5" fill="#ef4444"/>
+        <circle cx="218" cy="97" r="5" fill="#eab308"/>
+        <circle cx="232" cy="97" r="5" fill="#22c55e"/>
+        <text x="400" y="101" fill="#71717a" font-size="10" font-family="monospace" text-anchor="middle">School Management Portal</text>
+        
+        <!-- Sidebar and Content -->
+        <rect x="195" y="125" width="80" height="230" rx="6" fill="#18181b"/>
+        <rect x="205" y="140" width="60" height="12" rx="4" fill="#a855f7" opacity="0.4"/>
+        <rect x="205" y="160" width="60" height="8" rx="3" fill="#27272a"/>
+        <rect x="205" y="175" width="60" height="8" rx="3" fill="#27272a"/>
+        <rect x="205" y="190" width="60" height="8" rx="3" fill="#27272a"/>
+        
+        <!-- Cards -->
+        <rect x="290" y="125" width="150" height="60" rx="8" fill="#18181b" stroke="#27272a"/>
+        <text x="302" y="148" fill="#a1a1aa" font-size="9" font-family="monospace">TOTAL STUDENTS</text>
+        <text x="302" y="172" fill="#ffffff" font-size="18" font-family="sans-serif" font-weight="bold">1,248</text>
+        
+        <rect x="455" y="125" width="150" height="60" rx="8" fill="#18181b" stroke="#27272a"/>
+        <text x="467" y="148" fill="#a1a1aa" font-size="9" font-family="monospace">TEACHER PORTAL</text>
+        <text x="467" y="172" fill="#4ade80" font-size="18" font-family="sans-serif" font-weight="bold">64 Online</text>
+        
+        <rect x="290" y="200" width="315" height="140" rx="8" fill="#18181b" stroke="#27272a"/>
+        <text x="306" y="226" fill="#e4e4e7" font-size="11" font-family="sans-serif" font-weight="bold">Academic Performance &amp; Attendance</text>
+        <rect x="306" y="245" width="280" height="8" rx="4" fill="#27272a"/>
+        <rect x="306" y="245" width="220" height="8" rx="4" fill="#a855f7"/>
+        <text x="306" y="280" fill="#a1a1aa" font-size="9" font-family="monospace">AUTOMATED GRADE REPORTS · REALTIME ALERTS</text>
+        
+
+  <!-- Bottom Details Overlay -->
+  <rect x="0" y="380" width="800" height="70" fill="#09090b" fill-opacity="0.85"/>
+  <line x1="0" y1="380" x2="800" y2="380" stroke="#27272a" stroke-width="1"/>
+
+  <!-- Category & Badges -->
+  <text x="32" y="410" fill="#a855f7" font-size="10" font-family="'Space Mono', monospace" font-weight="bold" letter-spacing="1.5">NEXT.JS · TYPESCRIPT · TAILWIND</text>
+  <text x="32" y="432" fill="#f4f4f5" font-size="14" font-family="'PT Sans', sans-serif" font-weight="bold">School Management Platform</text>
+
+  <!-- Pill Badge -->
+  <rect x="660" y="402" width="108" height="26" rx="6" fill="#a855f7" fill-opacity="0.12" stroke="#a855f7" stroke-width="1"/>
+  <text x="714" y="419" fill="#a855f7" font-size="9" font-family="'Space Mono', monospace" font-weight="bold" text-anchor="middle" letter-spacing="1">FULL-STACK</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="520" fill="url(#g)"/>
+  <rect x="0" y="0" width="900" height="40" fill="#27272a"/>
+  <circle cx="25" cy="20" r="6" fill="#ef4444"/>
+  <circle cx="45" cy="20" r="6" fill="#eab308"/>
+  <circle cx="65" cy="20" r="6" fill="#22c55e"/>
+  <text x="450" y="25" fill="#a1a1aa" font-size="12" font-family="'Space Mono', monospace" text-anchor="middle">Mission Hacker BD — Automated Grading & Badges</text>
+  
+  <rect x="40" y="70" width="820" height="410" rx="12" fill="#09090b" stroke="#3f3f46" stroke-width="1.5"/>
+  <rect x="65" y="95" width="770" height="55" rx="8" fill="#18181b" stroke="#38bdf8" stroke-width="1"/>
+  <text x="85" y="128" fill="#38bdf8" font-size="14" font-family="'Space Mono', monospace" font-weight="bold">Mission Hacker BD — Automated Grading & Badges</text>
+  <text x="85" y="165" fill="#71717a" font-size="11" font-family="sans-serif">Real-time evaluation quizzes, skill certification and student scoreboard</text>
+  
+  <!-- Content Mockup Cards -->
+  <rect x="65" y="190" width="370" height="130" rx="8" fill="#18181b" stroke="#27272a"/>
+  <text x="85" y="220" fill="#f4f4f5" font-size="13" font-family="sans-serif" font-weight="bold">Feature Matrix Overview</text>
+  <text x="85" y="245" fill="#a1a1aa" font-size="11" font-family="'Space Mono', monospace">● Offline Storage: Active</text>
+  <text x="85" y="270" fill="#a1a1aa" font-size="11" font-family="'Space Mono', monospace">● Sync Status: Verified</text>
+  <text x="85" y="295" fill="#4ade80" font-size="11" font-family="'Space Mono', monospace">● Performance: 60 FPS Smooth</text>
+  
+  <rect x="465" y="190" width="370" height="130" rx="8" fill="#18181b" stroke="#27272a"/>
+  <text x="485" y="220" fill="#f4f4f5" font-size="13" font-family="sans-serif" font-weight="bold">Data Flow Architecture</text>
+  <text x="485" y="245" fill="#a1a1aa" font-size="11" font-family="'Space Mono', monospace">→ Local Cache Layer (SQLite/Hive)</text>
+  <text x="485" y="270" fill="#a1a1aa" font-size="11" font-family="'Space Mono', monospace">→ Low Latency UI Rendering</text>
+  <text x="485" y="295" fill="#38bdf8" font-size="11" font-family="'Space Mono', monospace">→ Modular Clean Architecture</text>
+  
+  <rect x="65" y="340" width="770" height="110" rx="8" fill="#18181b" stroke="#27272a"/>
+  <text x="85" y="375" fill="#f4f4f5" font-size="13" font-family="sans-serif" font-weight="bold">Screen Preview Telemetry</text>
+  <text x="85" y="405" fill="#71717a" font-size="11" font-family="sans-serif">Interface verified across Android 9 through Android 15 &amp; modern desktop browser viewports.</text>
+  <text x="85" y="430" fill="#38bdf8" font-size="11" font-family="'Space Mono', monospace">// SAYED MARUF · VERIFIED PRODUCTION BUILD</text>
+</svg>

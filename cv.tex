@@ -1,0 +1,271 @@
+%% Sayed Maruf — Professional CV
+%% Compiler: pdflatex (MiKTeX)
+
+\documentclass[10pt, a4paper]{article}
+
+%% ─── Packages ───────────────────────────────────────────────────────────────
+\usepackage[
+  top=1.8cm, bottom=1.8cm,
+  left=2cm,  right=2cm
+]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+
+%% ─── Colour palette ─────────────────────────────────────────────────────────
+\definecolor{accent}{RGB}{220, 80, 30}      % orange-red accent
+\definecolor{dark}{RGB}{24, 24, 27}         % near-black
+\definecolor{mid}{RGB}{82, 82, 91}          % zinc-600
+\definecolor{light}{RGB}{228, 228, 231}     % zinc-200
+\definecolor{green}{RGB}{34, 197, 94}       % success green
+
+%% ─── Typography ─────────────────────────────────────────────────────────────
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0pt}
+
+%% ─── Section headings ───────────────────────────────────────────────────────
+\titleformat{\section}
+  {\large\bfseries\color{dark}}
+  {}
+  {0pt}
+  {}
+  [\vspace{-2pt}\textcolor{accent}{\hrule height 1.5pt}\vspace{4pt}]
+
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+
+%% ─── List settings ──────────────────────────────────────────────────────────
+\setlist[itemize]{
+  leftmargin=1.4em,
+  itemsep=1pt,
+  topsep=2pt,
+  parsep=0pt,
+  label=\textcolor{accent}{\small$\bullet$}
+}
+
+%% ─── Custom commands ─────────────────────────────────────────────────────────
+
+% Entry: \cventry{Date}{Title}{Organisation}{Location}{Details}
+\newcommand{\cventry}[5]{%
+  \begin{tabularx}{\linewidth}{@{}p{2.6cm} X@{}}
+    \footnotesize\color{mid}#1 &
+    \textbf{\color{dark}#2}\hfill{\small\color{mid}#4}\\
+    & \textit{\small\color{mid}#3}\\
+    \ifx&#5&\else & \vspace{2pt}\small#5\fi
+  \end{tabularx}%
+  \vspace{4pt}%
+}
+
+% Skill row: \skillrow{Category}{Technologies}
+\newcommand{\skillrow}[2]{%
+  \begin{tabularx}{\linewidth}{@{}p{3.2cm} X@{}}
+    \footnotesize\textbf{\color{dark}#1} & \small\color{mid}#2
+  \end{tabularx}%
+  \vspace{3pt}%
+}
+
+% Tag pill (inline)
+\newcommand{\tag}[1]{%
+  \tikz[baseline=(x.base)]{
+    \node[
+      inner sep=3pt 5pt,
+      rounded corners=3pt,
+      fill=light,
+      text=mid,
+      font=\footnotesize\ttfamily
+    ](x){#1};
+  }%
+}
+
+% Icon link helper
+\newcommand{\iconlink}[3]{\href{#2}{#1~\texttt{\footnotesize#3}}}
+
+%% ─── Document ────────────────────────────────────────────────────────────────
+\begin{document}
+\pagestyle{empty}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%%  HEADER
+%% ═══════════════════════════════════════════════════════════════════════════
+\begin{center}
+  {\Huge\bfseries\color{dark} Sayed Maruf}\\[4pt]
+  {\large\color{accent} Flutter Developer \textbf{·} AI Engineer \textbf{·} Digital Marketer}\\[8pt]
+  \color{mid}
+  \faMapMarker*~Bayezid, Chattogram, Bangladesh
+  \quad|\quad
+  \iconlink{\faEnvelope}{mailto:sayedmarufprof@gmail.com}{sayedmarufprof@gmail.com}
+  \quad|\quad
+  \iconlink{\faPhone}{tel:+8801881574747}{+880~1881~574~747}
+  \\[4pt]
+  \iconlink{\faGithub}{https://github.com/Maruf52230}{github.com/Maruf52230}
+  \quad|\quad
+  \iconlink{\faLinkedin}{https://www.linkedin.com/in/sayed-maruf-4009aa36a}{linkedin.com/in/sayed-maruf-4009aa36a}
+  \quad|\quad
+  \iconlink{\faFacebook}{https://www.facebook.com/sayedmarufmd}{fb.com/sayedmarufmd}
+\end{center}
+
+\vspace{2pt}
+\noindent\textcolor{light}{\hrule height 0.5pt}
+\vspace{8pt}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%%  PROFESSIONAL SUMMARY
+%% ═══════════════════════════════════════════════════════════════════════════
+\section{Professional Summary}
+
+Dedicated Software Engineer specialising in cross-platform mobile development (Flutter/Dart),
+full-stack web applications, and AI-powered products. Currently pursuing a BSc in Computer
+Science and Engineering at the University of Chittagong while building real-world solutions
+for clients and open-source. Achieved GPA~5.00 across all three public board examinations.
+Available for freelance projects, internships, and collaborative engagements.
+
+\medskip
+\begin{tabularx}{\linewidth}{@{} X X X @{}}
+  \textbf{\color{accent}4+} Years Coding &
+  \textbf{\color{accent}20+} Projects Built &
+  \textbf{\color{accent}40+} GitHub Repositories
+\end{tabularx}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%%  EDUCATION
+%% ═══════════════════════════════════════════════════════════════════════════
+\section{Education}
+
+\cventry{2025 -- Present}{Bachelor of Science in Computer Science \& Engineering (CSE)}
+  {University of Chittagong}{Chattogram, Bangladesh}{}
+
+\cventry{2022 -- 2024}{Higher Secondary Certificate (HSC) \textcolor{accent}{·} GPA 5.00 / 5.00}
+  {Government City College, Chattogram Board}{Chattogram, Bangladesh}
+  {Science group. Distinction — highest grade in all subjects.}
+
+\cventry{2016 -- 2022}{Secondary School Certificate (SSC) \textcolor{accent}{·} GPA 5.00 / 5.00}
+  {Government Muslim High School, Chattogram Board}{Chattogram, Bangladesh}
+  {Science group. Distinction — highest grade in all subjects.}
+
+\cventry{2016}{Primary Education Certificate (PEC) \textcolor{accent}{·} GPA 5.00 / 5.00}
+  {Banskhali Pre Cadet School \& College, Chattogram Board}{Chattogram, Bangladesh}
+  {Distinction — highest grade in all subjects.}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%%  TECHNICAL SKILLS
+%% ═══════════════════════════════════════════════════════════════════════════
+\section{Technical Skills}
+
+\skillrow{Mobile Development}{Flutter · Dart (primary expertise)}
+\skillrow{Frontend}{React · Next.js · JavaScript (ES2022+) · TypeScript · Tailwind CSS · HTML5 / CSS3}
+\skillrow{Backend}{Node.js · Express.js · Django · REST API design}
+\skillrow{Databases}{Firebase (Firestore / Realtime DB) · MongoDB · PostgreSQL · MySQL}
+\skillrow{AI \& ML}{OpenAI API · DeepSeek · OpenRouter · Prompt Engineering · LLM integration}
+\skillrow{Tools \& Platforms}{Git · GitHub · Vercel · Docker · WordPress · Android deployment}
+\skillrow{Digital Marketing}{Facebook Ads · Instagram Ads · Meta Business Suite · Conversion optimisation}
+\skillrow{Languages}{Bangla (Native) · English (Fluent) · Hindi (Conversational)}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%%  PROJECTS
+%% ═══════════════════════════════════════════════════════════════════════════
+\section{Key Projects}
+
+\cventry{2024 -- 2025}{\href{https://github.com/Maruf52230}{School Management Platform}}
+  {Next.js · Firebase · Tailwind CSS · TypeScript}{Full-Stack Web}
+  {%
+    Complete school administration system covering teacher panels, student portals,
+    assignment and material sharing, and real-time push notifications.
+    Deployed on Vercel; supports concurrent multi-role access.
+  }
+
+\cventry{2025}{\href{https://github.com/Maruf52230}{Train Tracker App}}
+  {Flutter · Dart · Firebase · GPS Integration}{Mobile (Android)}
+  {%
+    Cross-platform mobile app providing real-time train location tracking using GPS
+    and a Firebase Realtime Database backend. Published to Android; designed with
+    offline-first UX principles.
+  }
+
+\cventry{2025 -- 2026}{\href{https://github.com/Maruf52230}{AI Chatbots \& Automation Tools}}
+  {Python · OpenAI API · DeepSeek · OpenRouter · Django}{AI / Backend}
+  {%
+    Suite of AI-powered products: intelligent chatbots, task-automation agents, and
+    prompt-optimisation tools. Integrated multiple LLM providers behind a unified
+    API abstraction layer.
+  }
+
+\cventry{2023 -- 2024}{\href{https://maruf52230.github.io/sayed_maruf/}{Personal Portfolio Website}}
+  {HTML5 · Tailwind CSS · Alpine.js}{Web / Frontend}
+  {%
+    Fully responsive personal portfolio with dark mode, offline-first static project feed,
+    real-time GitHub stats, and a custom terminal-themed UI. Hosted on GitHub Pages.
+  }
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%%  EXPERIENCE / FREELANCE
+%% ═══════════════════════════════════════════════════════════════════════════
+\section{Experience}
+
+\cventry{2023 -- Present}{Freelance Developer \& Digital Marketer}
+  {Self-employed}{Remote}
+  {%
+    \begin{itemize}
+      \item Built and delivered 20+ client projects spanning mobile apps, landing pages,
+            and AI-powered tools.
+      \item Managed Facebook and Instagram paid ad campaigns — audience research,
+            creative strategy, A/B testing, and ROI reporting.
+      \item Provided WordPress development and maintenance services to small businesses.
+    \end{itemize}
+  }
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%%  CERTIFICATIONS
+%% ═══════════════════════════════════════════════════════════════════════════
+\section{Certifications}
+
+\begin{itemize}
+  \item Flutter Mobile App Development
+  \item Facebook Ads \& Digital Marketing
+  \item AI \& Machine Learning Basics
+\end{itemize}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%%  ACHIEVEMENTS
+%% ═══════════════════════════════════════════════════════════════════════════
+\section{Achievements \& Activities}
+
+\begin{itemize}
+  \item \textbf{Academic Excellence} — GPA 5.00/5.00 in three consecutive national board examinations
+        (PEC 2016, SSC 2022, HSC 2024).
+  \item \textbf{Hackathon Participant} — National-level coding hackathons; built functional products
+        within tight deadlines and gained experience in rapid prototyping and teamwork.
+  \item \textbf{Open-Source Contributor} — Submitted pull requests, reported issues, and maintained
+        public repositories with clear documentation on GitHub.
+  \item \textbf{University Projects Presenter} — Presented School Management Platform and Train Tracker
+        to the CSE department at University of Chittagong; both apps were adopted by real users.
+  \item \textbf{Digital Marketing Results} — Delivered measurable ROI improvements for client ad
+        campaigns through data-driven targeting and creative optimisation.
+\end{itemize}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%%  AVAILABILITY
+%% ═══════════════════════════════════════════════════════════════════════════
+\section{Availability}
+
+Open to \textbf{Freelance} engagements, \textbf{Internships}, and \textbf{Collaborative} projects.
+Preferred contact: \href{mailto:sayedmarufprof@gmail.com}{\texttt{sayedmarufprof@gmail.com}}
+
+\vfill
+\begin{center}
+  \footnotesize\color{mid}
+  Last updated: June 2026 \quad|\quad
+  \href{https://maruf52230.github.io/sayed_maruf/}{maruf52230.github.io/sayed\_maruf}
+\end{center}
+
+\end{document}

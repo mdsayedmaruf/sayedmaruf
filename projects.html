@@ -3,14 +3,41 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects — Eliott</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet"/>
-  <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{display:['PT Sans','sans-serif'],body:['DM Sans','sans-serif']},colors:{accent:'#FF6B2B','accent-light':'#FF8F5C'}}}}</script>
+  <meta name="description" content="Sayed Maruf — Projects Portfolio. Mobile Apps, Full-Stack Web Platforms & Autonomous AI Systems."/>
+  <title>Sayed Maruf — Projects</title>
+
+  <!-- Local vendor assets for 100% offline support with CDN fallback -->
+  <script src="vendor/tailwind.js"></script>
+  <script>if(!window.tailwind){document.write('<script src="https://cdn.tailwindcss.com"><\/script>')}</script>
+  <script defer src="vendor/alpine.min.js"></script>
+  <script>window.addEventListener('DOMContentLoaded',()=>{if(!window.Alpine){const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js';s.defer=true;document.head.appendChild(s)}})</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['PT Sans','sans-serif'],
+            body: ['DM Sans','sans-serif'],
+            mono: ['Space Mono','ui-monospace','monospace']
+          },
+          colors: {
+            accent: '#FF6B2B',
+            'accent-light': '#FF8F5C'
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
     *,*::before,*::after{box-sizing:border-box;}
-    html{font-family:'DM Sans',sans-serif;}
+    html,body{font-family:'DM Sans',sans-serif;}
     h1,h2,h3,h4,h5,h6{font-family:'PT Sans',sans-serif;}
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s cubic-bezier(.4,0,.2,1),transform .55s cubic-bezier(.4,0,.2,1);}
     .reveal.visible{opacity:1;transform:translateY(0);}
@@ -24,25 +51,31 @@
     .btn-primary::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:rgba(255,255,255,.18);transform:skewX(-20deg);transition:left .4s cubic-bezier(.4,0,.2,1);}
     .btn-primary:hover::after{left:160%;}
     [x-cloak]{display:none!important;}
-    .photo-frame{position:relative;overflow:hidden;background:#e4e4e7;}
-    .photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
-    .project-card{transition:transform .3s cubic-bezier(.4,0,.2,1),border-color .2s;}
-    .project-card:hover{transform:translateY(-4px);}
+
+    /* Terminal aesthetic badges */
+    .mission-num{font-family:'Space Mono',monospace;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:#FF6B2B;font-weight:700}
+    .status-badge{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .55rem;border-radius:.25rem;font-weight:700;line-height:1.4}
+    .status-active{background:rgba(74,222,128,.12);color:#4ADE80;border:1px solid rgba(74,222,128,.3)}
+    .status-proto{background:rgba(251,191,36,.1);color:#FBBF24;border:1px solid rgba(251,191,36,.3)}
+    .term-lbl{font-family:'Space Mono',monospace;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:#71717a}
+    .dark .term-lbl{color:#52525b}
   </style>
 </head>
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-body antialiased">
 
+  <!-- Header -->
   <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
     :class="scrolled?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':'bg-transparent'">
     <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="index.html" class="font-display font-bold text-xl tracking-tight z-10">
-        <span class="text-zinc-900 dark:text-white">eli</span><span class="text-accent">ott</span>
+        <span class="text-zinc-900 dark:text-white">Sayed </span><span class="text-accent">Maruf</span>
       </a>
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <li><a href="index.html#services" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Services</a></li>
-        <li><a href="projects.html" class="nav-link text-accent font-medium">Work</a></li>
-        <li><a href="index.html#about" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
-        <li><a href="blog.html" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Blog</a></li>
+        <li><a href="index.html#profile" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Profile</a></li>
+        <li><a href="projects.html" class="nav-link text-accent font-medium">Projects</a></li>
+        <li><a href="index.html#stack" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Stack</a></li>
+        <li><a href="index.html#journey" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Journey</a></li>
+        <li><a href="index.html#github" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">GitHub</a></li>
         <li><a href="index.html#contact" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
       </ul>
       <div class="flex items-center gap-3">
@@ -59,105 +92,202 @@
     </nav>
     <div x-show="mobileMenu" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
       <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
-        <li><a href="index.html#services" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Services</a></li>
-        <li><a href="projects.html" class="block text-accent font-medium">Work</a></li>
-        <li><a href="index.html#about" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">About</a></li>
-        <li><a href="blog.html" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Blog</a></li>
+        <li><a href="index.html#profile" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Profile</a></li>
+        <li><a href="projects.html" class="block text-accent font-medium">Projects</a></li>
+        <li><a href="index.html#stack" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Stack</a></li>
+        <li><a href="index.html#journey" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Journey</a></li>
         <li><a href="index.html#contact" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Contact</a></li>
       </ul>
     </div>
   </header>
 
   <main>
+    <!-- Hero / Header -->
     <section class="pt-36 pb-12 relative overflow-hidden">
       <div class="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
       <div class="max-w-6xl mx-auto px-6 relative z-10">
-        <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Portfolio</p>
-        <h1 class="reveal font-display font-bold text-5xl md:text-6xl text-zinc-900 dark:text-white leading-tight mb-4">All Projects</h1>
-        <p class="reveal text-lg text-zinc-500 dark:text-zinc-400 max-w-xl leading-relaxed mb-8">A complete look at my work across UI/UX design, frontend development and landing pages.</p>
+        <p class="reveal term-lbl mb-3">// WORK CATALOG</p>
+        <h1 class="reveal font-display font-bold text-5xl md:text-6xl text-zinc-900 dark:text-white leading-tight mb-4">PROJECT_PORTFOLIO</h1>
+        <p class="reveal text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-8">
+          A focused catalog of active mobile apps, full-stack web platforms, and autonomous AI systems built by Sayed Maruf.
+        </p>
+
+        <!-- Filter buttons -->
         <div class="reveal flex flex-wrap gap-2">
           <template x-for="f in filterOptions" :key="f.value">
             <button
               @click="filter = f.value"
-              :class="filter === f.value ? 'bg-accent text-white border-accent' : 'bg-white dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border-zinc-200 dark:border-zinc-700 hover:border-accent'"
-              class="text-sm px-4 py-1.5 rounded-full border transition-colors"
-              x-text="f.label">
+              :class="filter === f.value
+                ? 'bg-accent text-white border-accent'
+                : 'border-zinc-300 dark:border-zinc-700 text-zinc-500 dark:text-zinc-400 hover:border-accent hover:text-accent'"
+              class="font-mono text-xs px-4 py-1.5 rounded border transition-colors tracking-widest"
+              :x-text="'[ ' + f.label.toUpperCase() + ' ]'">
             </button>
           </template>
         </div>
       </div>
     </section>
 
+    <!-- Projects List (No Images) -->
     <section class="pb-24">
       <div class="max-w-6xl mx-auto px-6">
-        <!--
-          CORRECTIF : on itere sur TOUS les projets, x-show + x-transition gerent
-          la visibilite de chaque carte. L'ancienne version utilisait x-for sur
-          filteredProjects (computed), ce qui forcait un re-render complet du DOM
-          a chaque changement de filtre — detruisant les classes .reveal et cachant
-          tout le contenu.
-        -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <template x-for="p in allProjects" :key="p.id">
+        <div class="grid md:grid-cols-2 gap-6">
+          <template x-for="(project, idx) in allProjects" :key="project.id">
             <div
-              x-show="filter === 'all' || p.category === filter"
+              x-show="filter === 'all' || project.category === filter"
               x-transition:enter="transition ease-out duration-300"
               x-transition:enter-start="opacity-0 scale-95 translate-y-2"
               x-transition:enter-end="opacity-100 scale-100 translate-y-0"
               x-transition:leave="transition ease-in duration-200"
               x-transition:leave-start="opacity-100 scale-100"
               x-transition:leave-end="opacity-0 scale-95">
-              <article class="project-card group h-full rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
-                <a :href="p.url" class="block photo-frame w-full h-52">
-                  <img :src="p.img" :alt="p.title" loading="lazy"/>
-                </a>
-                <div class="p-6">
-                  <div class="flex flex-wrap gap-2 mb-3">
-                    <template x-for="tag in p.tags" :key="tag">
-                      <span class="text-xs px-2.5 py-1 rounded-full"
-                        :class="tag === p.categoryLabel ? 'bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700' : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400'"
-                        x-text="tag"></span>
+              <article
+                class="group h-full bg-white dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200 dark:border-zinc-800 hover:border-accent dark:hover:border-accent transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-accent/5 flex flex-col justify-between relative overflow-hidden"
+                @click="openModal(project)">
+                <!-- Hover Glow -->
+                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent-light opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+                <div>
+                  <!-- Header: Mission # + Category & Status -->
+                  <div class="flex items-center justify-between gap-3 mb-4">
+                    <div class="flex items-center gap-2">
+                      <span class="mission-num" x-text="'MISSION #' + String(idx+1).padStart(2,'0')"></span>
+                      <span class="text-xs font-mono font-medium text-accent bg-accent/10 px-2.5 py-0.5 rounded border border-accent/20" x-text="project.category"></span>
+                    </div>
+                    <span class="status-badge"
+                      :class="project.status === 'LIVE' ? 'status-active' : project.status === 'PIPELINE' ? 'status-proto' : 'status-active'"
+                      x-text="project.status || 'ACTIVE'"></span>
+                  </div>
+
+                  <!-- Title -->
+                  <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-2.5 group-hover:text-accent transition-colors leading-snug cursor-pointer" x-text="project.title"></h3>
+
+                  <!-- Small Description -->
+                  <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-5" x-text="project.shortDescription"></p>
+
+                  <!-- Tags -->
+                  <div class="flex flex-wrap gap-1.5 mb-6">
+                    <template x-for="tag in (project.tags || [])" :key="tag">
+                      <span class="font-mono text-[11px] bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 px-2.5 py-1 rounded" x-text="tag"></span>
                     </template>
                   </div>
-                  <a :href="p.url">
-                    <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors" x-text="p.title"></h3>
-                  </a>
-                  <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4" x-text="p.desc"></p>
-                  <div class="flex items-center justify-between">
-                    <a :href="p.url" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nav-link">View project →</a>
-                    <span class="text-xs text-zinc-400" x-text="p.year"></span>
-                  </div>
+                </div>
+
+                <!-- Bottom Links / Actions -->
+                <div class="pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between gap-3" @click.stop>
+                  <!-- External link if attached -->
+                  <template x-if="project.link">
+                    <a :href="project.link" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-white bg-accent hover:bg-accent-light px-3.5 py-1.5 rounded-lg transition-colors shadow-sm">
+                      <span x-text="project.displayLink || 'Visit Site'"></span>
+                      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </a>
+                  </template>
+                  <template x-if="!project.link">
+                    <span class="inline-flex items-center gap-1.5 font-mono text-xs text-zinc-400 dark:text-zinc-500">
+                      <span class="w-1.5 h-1.5 rounded-full bg-accent/70"></span>
+                      <span x-text="project.badge || 'Project Built'"></span>
+                    </span>
+                  </template>
+
+                  <!-- View Overview Modal button -->
+                  <button type="button" @click="openModal(project)"
+                          class="inline-flex items-center gap-1 font-mono text-xs text-zinc-500 dark:text-zinc-400 hover:text-accent dark:hover:text-accent transition-colors ml-auto">
+                    <span>[ Overview ]</span>
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                  </button>
                 </div>
               </article>
             </div>
           </template>
         </div>
-        <div x-show="visibleCount === 0" x-cloak class="text-center py-20">
-          <p class="text-zinc-400 text-sm">No projects in this category yet.</p>
+
+        <div x-show="visibleCount === 0" x-cloak class="text-center py-20 text-zinc-400">
+          <p class="font-mono text-sm">No projects found in this category.</p>
         </div>
       </div>
     </section>
 
+    <!-- Project Detail Modal (No Images) -->
+    <div
+      x-show="selectedProject"
+      x-cloak
+      @click.self="closeModal()"
+      @keydown.escape.window="closeModal()"
+      class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      role="dialog" aria-modal="true">
+      <div
+        x-show="selectedProject"
+        class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative p-6 sm:p-8"
+        @click.stop>
+        <button
+          @click="closeModal()"
+          class="absolute top-5 right-5 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+          aria-label="Close">
+          <svg class="w-4 h-4 text-zinc-600 dark:text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+
+        <template x-if="selectedProject">
+          <div>
+            <div class="flex flex-wrap items-center gap-2 mb-4">
+              <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full font-mono font-medium" x-text="selectedProject.category"></span>
+              <template x-for="tag in (selectedProject.tags || [])" :key="tag">
+                <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full font-mono" x-text="tag"></span>
+              </template>
+              <span class="ml-auto text-xs font-mono font-medium text-zinc-400 bg-zinc-100 dark:bg-zinc-800 px-3 py-1 rounded-full" x-text="selectedProject.status || 'ACTIVE'"></span>
+            </div>
+
+            <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-3" x-text="selectedProject.title"></h3>
+            <p class="text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-6 leading-relaxed bg-zinc-50 dark:bg-zinc-800/60 p-4 rounded-xl border border-zinc-100 dark:border-zinc-800" x-text="selectedProject.shortDescription"></p>
+
+            <div class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed whitespace-pre-line mb-6" x-text="selectedProject.longDescription"></div>
+
+            <!-- Action buttons inside modal -->
+            <div class="pt-6 border-t border-zinc-100 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-3">
+              <template x-if="selectedProject.link">
+                <a :href="selectedProject.link" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 bg-accent text-white font-mono text-xs font-medium px-5 py-2.5 rounded-xl hover:bg-accent-light transition-colors">
+                  <span x-text="'Open ' + (selectedProject.displayLink || 'Website')"></span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+              </template>
+              <button type="button" @click="closeModal()"
+                      class="font-mono text-xs text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 ml-auto">
+                [ Close Window ]
+              </button>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <!-- Contact CTA -->
     <section class="pb-24">
       <div class="max-w-6xl mx-auto px-6">
-        <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-14 text-center relative overflow-hidden">
+        <div class="bg-zinc-900 dark:bg-zinc-900/90 rounded-3xl p-10 md:p-14 text-center relative overflow-hidden border border-zinc-800">
           <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none"></div>
-          <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none"></div>
           <div class="relative z-10">
-            <p class="text-xs font-medium text-accent tracking-widest uppercase mb-4">Ready to start?</p>
-            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-4">Want your project here?</h2>
-            <p class="text-zinc-400 max-w-md mx-auto mb-8">I'm available for new projects. Tell me about what you're building and let's see if we're a good fit.</p>
-            <a href="index.html#contact" class="inline-flex items-center gap-2 btn-primary bg-accent text-white font-medium px-8 py-3.5 rounded-full hover:bg-accent-light transition-colors">Start a project &rarr;</a>
+            <p class="term-lbl mb-3" style="color:#52525b">// COLLABORATION</p>
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-4">Have an Idea to Build?</h2>
+            <p class="text-zinc-400 max-w-md mx-auto mb-8">Available for mobile apps, scalable web platforms, and custom AI agent workflows.</p>
+            <a href="index.html#contact" class="inline-flex items-center gap-2 btn-primary bg-accent text-white font-medium px-8 py-3.5 rounded-full hover:bg-accent-light transition-colors">Contact Sayed Maruf &rarr;</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="border-t border-zinc-100 dark:border-zinc-900">
     <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-zinc-400">&copy; <span id="year"></span> Eliott. All rights reserved.</p>
-      <p class="text-xs text-zinc-500">Built with Tailwind CSS &amp; Alpine.js</p>
+      <p class="text-sm text-zinc-400">&copy; <span id="year"></span> Sayed Maruf. All rights reserved.</p>
+      <p class="text-xs text-zinc-500">Built with <a href="https://tailwindcss.com" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">Tailwind CSS</a> &amp; <a href="https://alpinejs.dev" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">Alpine.js</a></p>
     </div>
   </footer>
 
@@ -168,30 +298,127 @@
         scrolled: false,
         mobileMenu: false,
         filter: 'all',
+        selectedProject: null,
 
         filterOptions: [
-          { value: 'all',       label: 'All (9)' },
-          { value: 'saas',      label: 'SaaS' },
-          { value: 'landing',   label: 'Landing page' },
-          { value: 'agency',    label: 'Agency' },
-          { value: 'ecommerce', label: 'E-commerce' },
+          { value: 'all',     label: 'All (8)' },
+          { value: 'Flutter', label: 'Flutter (3)' },
+          { value: 'Web',     label: 'Web (3)' },
+          { value: 'AI',      label: 'AI & Automation (2)' },
         ],
 
         allProjects: [
-          { id:1,  title:'Novu — SaaS Dashboard',  category:'saas',      categoryLabel:'SaaS',         tags:['SaaS','Figma','Tailwind'],           year:'2025', desc:'Complete redesign of a B2B notification platform. Reduced cognitive load by 40% and improved trial-to-paid conversion.',    img:'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80',  url:'case-study.html' },
-          { id:2,  title:'Finlo — Fintech App',    category:'landing',   categoryLabel:'Landing page', tags:['Landing page','Fintech','Alpine.js'], year:'2024', desc:'Marketing site and onboarding flow for a personal finance app targeting young professionals.',                              img:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80', url:'case-study.html' },
-          { id:3,  title:'Orea — Creative Agency', category:'agency',    categoryLabel:'Agency',       tags:['Agency','Animation'],                year:'2024', desc:'Bold editorial site for a Paris-based branding studio. Scroll-driven animations and custom cursor.',                      img:'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=700&q=80', url:'case-study.html' },
-          { id:4,  title:'Vesta — Real Estate',    category:'landing',   categoryLabel:'Landing page', tags:['Landing page','Real Estate'],         year:'2024', desc:'Conversion-focused landing page for a proptech startup entering the French market.',                                      img:'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80',  url:'case-study.html' },
-          { id:5,  title:'Arkio — SaaS Analytics', category:'saas',      categoryLabel:'SaaS',         tags:['SaaS','Dashboard','Figma'],           year:'2024', desc:'Data visualisation dashboard for a B2B analytics platform. Designed for clarity at high data density.',                img:'https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=700&q=80', url:'case-study.html' },
-          { id:6,  title:'Bloom — E-commerce',     category:'ecommerce', categoryLabel:'E-commerce',   tags:['E-commerce','Shopify'],               year:'2023', desc:'Custom Shopify theme for a sustainable cosmetics brand. Mobile-first with high emphasis on product imagery.',           img:'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=700&q=80',  url:'case-study.html' },
-          { id:7,  title:'Mira — Health App',      category:'landing',   categoryLabel:'Landing page', tags:['Landing page','Health','Tailwind'],   year:'2023', desc:'App landing page for a mental wellness startup. Warm, accessible design with strong social proof.',                    img:'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80', url:'case-study.html' },
-          { id:8,  title:'Noto — Agency Rebrand',  category:'agency',    categoryLabel:'Agency',       tags:['Agency','Rebrand'],                  year:'2023', desc:'Full rebrand and website for a digital communications agency in Lyon.',                                                img:'https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80', url:'case-study.html' },
-          { id:9,  title:'Kova — E-commerce',      category:'ecommerce', categoryLabel:'E-commerce',   tags:['E-commerce','Figma'],                year:'2023', desc:'Product page redesign and checkout optimisation for a DTC furniture brand. Reduced cart abandonment by 18%.',         img:'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80',  url:'case-study.html' },
+          {
+            id: 'project-1',
+            title: 'Mission Hacker Bangladesh Mobile App',
+            category: 'Flutter',
+            status: 'ACTIVE',
+            badge: 'Mobile App',
+            tags: ['Flutter', 'Android', 'Cybersecurity', 'e-Learning'],
+            link: null,
+            displayLink: null,
+            shortDescription: 'Mobile app for the Mission Hacker Bangladesh platform, offering cybersecurity & ethical hacking courses, hands-on modules, quizzes, and resources on Android.',
+            longDescription: 'Mission Hacker Bangladesh Mobile App brings ethical hacking education directly into students\' hands with a fast, modern Flutter mobile experience.\n\nKey Highlights:\n• Structured cybersecurity video courses and reading modules\n• Downloadable study materials and practice challenges\n• Interactive quizzes with real-time feedback\n• Offline-first content caching for continuous learning on Android'
+          },
+          {
+            id: 'project-2',
+            title: 'Mission Hacker Bangladesh Full website with admin dashboard',
+            category: 'Web',
+            status: 'LIVE',
+            badge: 'Web Platform',
+            tags: ['Full-Stack', 'LMS', 'Admin Dashboard', 'Cybersecurity'],
+            link: 'https://missionhacker.com',
+            displayLink: 'missionhacker.com',
+            shortDescription: 'Full cybersecurity e-learning web platform with a powerful admin dashboard, course management, student progress tracking, quizzes, and certificate generation.',
+            longDescription: 'Mission Hacker Bangladesh is a comprehensive, production-ready e-learning web ecosystem dedicated to professional cybersecurity education.\n\nKey Highlights:\n• Full-featured Admin Dashboard for course publishing, user management, and revenue analytics\n• Dynamic Student LMS portal with video player, progress indicators, and automated certificates\n• Interactive browser-based labs and skill assessment quizzes\n• High-performance, scalable web architecture built for thousands of active learners\n\nLive Platform: https://missionhacker.com'
+          },
+          {
+            id: 'project-3',
+            title: 'AdmissionJoy Platform for admission mcq exam. Buet Medical etc etc . all varsity',
+            category: 'Web',
+            status: 'LIVE',
+            badge: 'Admission Engine',
+            tags: ['Web Platform', 'EdTech', 'MCQ Engine', 'BUET & Medical'],
+            link: 'https://admissionjoy.com',
+            displayLink: 'admissionjoy.com',
+            shortDescription: 'Online examination and MCQ practice platform for admission test candidates covering BUET, Medical, and all engineering & public universities in Bangladesh.',
+            longDescription: 'AdmissionJoy is an all-in-one exam prep engine empowering admission aspirants across Bangladesh to conquer competitive tests.\n\nKey Highlights:\n• Targeted question banks and timed mock tests for BUET, Medical, and all varsity units\n• Real-time automated grading with negative marking calculation and instant solution analysis\n• Chapter-wise and subject-wise practice modes to isolate weak areas\n• High-concurrency architecture built to support peak exam-day traffic effortlessly\n\nLive Platform: https://admissionjoy.com'
+          },
+          {
+            id: 'project-4',
+            title: 'Prottoyi 25 Mobile app for CSE25 Student Materials etc',
+            category: 'Flutter',
+            status: 'ACTIVE',
+            badge: 'Batch Portal',
+            tags: ['Flutter', 'CSE 25', 'Academic LMS', 'Routine & Notes'],
+            link: null,
+            displayLink: null,
+            shortDescription: 'Dedicated academic companion mobile app for CSE 25 batch students featuring organized semester lecture notes, question banks, class routines, and batch polls.',
+            longDescription: 'Prottoyi 25 is an academic batch companion app engineered to simplify student communication and centralized curriculum management.\n\nKey Highlights:\n• Centralized digital repository for lecture slides, PDF books, lab manuals, and past exam questions\n• Real-time batch discussion channels, polls, and class event voting\n• Dynamic routine engine with class notifications, exam countdowns, and room shift announcements\n• Offline cache keeping syllabus and essential timetables accessible without internet'
+          },
+          {
+            id: 'project-5',
+            title: 'CSE26 Mobile App',
+            category: 'Flutter',
+            status: 'ACTIVE',
+            badge: 'Student App',
+            tags: ['Flutter', 'CSE 26', 'Academic Hub', 'Android'],
+            link: null,
+            displayLink: null,
+            shortDescription: 'Comprehensive academic assistance mobile app for CSE 26 students with centralized curriculum materials, daily timetables, teacher info, and notice alerts.',
+            longDescription: 'CSE26 Mobile App is a dedicated mobile portal built to guide CSE 26 students through coursework and campus schedules.\n\nKey Highlights:\n• Instant digital routine updates with section schedules and subject breakdown\n• Academic vault for semester lecture slides, reference guides, and assignment prompts\n• Push notification alerts for unexpected schedule updates and deadlines\n• Clean, battery-optimized Flutter UI with native dark mode support'
+          },
+          {
+            id: 'project-6',
+            title: 'CSECUHUB centralized platform for CSECU student share materials, Routine etc etc',
+            category: 'Web',
+            status: 'ACTIVE',
+            badge: 'University Platform',
+            tags: ['Web Platform', 'CSECU', 'Resource Hub', 'Materials & Routine'],
+            link: null,
+            displayLink: null,
+            shortDescription: 'Centralized platform for Department of CSE (University of Chittagong) students to share study materials, routines, notices, and academic announcements.',
+            longDescription: 'CSECUHUB is the central digital hub connecting students across all active batches of the CSE Department at the University of Chittagong.\n\nKey Highlights:\n• Unified material archive: curriculum syllabi, lecture presentations, lab code, and previous exam questions\n• Departmental routine engine with real-time class schedule updates\n• Peer-to-peer resource sharing, uploads, and batch-wise material tagging\n• Responsive web design accessible from any desktop or mobile browser'
+          },
+          {
+            id: 'project-7',
+            title: 'DOCVID Engine Autonomous Agentic Pipeline for making script to DOcumentry video',
+            category: 'AI',
+            status: 'PIPELINE',
+            badge: 'Agentic AI',
+            tags: ['Autonomous Agents', 'AI Pipeline', 'Script-to-Video', 'Multi-Agent'],
+            link: null,
+            displayLink: null,
+            shortDescription: 'Autonomous agentic pipeline that transforms raw scripts and research topics into fully produced documentary videos with automated asset gathering, narration, and editing.',
+            longDescription: 'DOCVID Engine is an autonomous multi-agent pipeline engineered to automate end-to-end documentary video production.\n\nKey Highlights:\n• Multi-agent workflow: Script breakdown, scene planning, asset research, and narration generation\n• Multi-modal orchestration combining LLM reasoning, voice synthesis, and visual sourcing\n• Automated timeline assembly, b-roll placement, subtitles, and audio balancing\n• Condenses documentary video creation from days of manual labor into minutes of automated processing'
+          },
+          {
+            id: 'project-8',
+            title: 'Vibebook, From your idea to a full book in a minutes. etc etc.',
+            category: 'AI',
+            status: 'LIVE',
+            badge: 'Generative AI',
+            tags: ['Generative AI', 'LLM Agent', 'Idea-to-Book', 'Publishing'],
+            link: 'https://vibebook.pro',
+            displayLink: 'vibebook.pro',
+            shortDescription: 'Generative AI publishing platform that converts any seed idea or prompt into a structured, chaptered, full-length book in minutes.',
+            longDescription: 'Vibebook is an AI-powered book authoring and publishing platform that transforms any creative concept into a complete book in minutes.\n\nKey Highlights:\n• From prompt to publication: Generates comprehensive outlines, detailed narrative chapters, and chapter summaries\n• Context-preserving generation maintaining narrative coherence, tone, and character arcs\n• Export-ready output formatted for eBooks, PDFs, and publishing channels\n• Fast generation turnaround enabling authors and educators to draft full-length books rapidly\n\nLive Platform: https://vibebook.pro'
+          }
         ],
 
         get visibleCount() {
           if (this.filter === 'all') return this.allProjects.length;
           return this.allProjects.filter(p => p.category === this.filter).length;
+        },
+
+        openModal(project) {
+          this.selectedProject = project;
+          document.body.style.overflow = 'hidden';
+        },
+
+        closeModal() {
+          this.selectedProject = null;
+          document.body.style.overflow = '';
         },
 
         init() {

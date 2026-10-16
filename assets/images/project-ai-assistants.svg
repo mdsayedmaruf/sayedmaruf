@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0f14"/>
+      <stop offset="100%" stop-color="#08080a"/>
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#27272a" stroke-width="0.75" stroke-opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  <rect width="800" height="450" fill="url(#glowGrad)"/>
+
+  <!-- Top Accent Stripe -->
+  <rect x="0" y="0" width="800" height="4" fill="#38bdf8"/>
+
+  <!-- Main Illustration Content -->
+  
+        <!-- Neural Network / AI Assistant Interface -->
+        <rect x="180" y="80" width="440" height="290" rx="14" fill="#09090b" stroke="#38bdf8" stroke-width="1.5"/>
+        <rect x="180" y="80" width="440" height="34" rx="14" fill="#18181b"/>
+        <circle cx="204" cy="97" r="5" fill="#ef4444"/>
+        <circle cx="218" cy="97" r="5" fill="#eab308"/>
+        <circle cx="232" cy="97" r="5" fill="#22c55e"/>
+        <text x="400" y="101" fill="#71717a" font-size="10" font-family="monospace" text-anchor="middle">AI Agent Orchestrator</text>
+        
+        <!-- Chat Dialogue -->
+        <rect x="204" y="130" width="280" height="42" rx="8" fill="#18181b" stroke="#27272a"/>
+        <text x="216" y="154" fill="#e4e4e7" font-size="10" font-family="sans-serif">User: Analyze quarterly customer sentiment and summarize</text>
+        
+        <rect x="250" y="184" width="350" height="66" rx="8" fill="#0c4a6e" stroke="#38bdf8" stroke-width="1"/>
+        <text x="264" y="206" fill="#38bdf8" font-size="10" font-family="monospace" font-weight="bold">AI Agent (DeepSeek + OpenAI):</text>
+        <text x="264" y="224" fill="#e0f2fe" font-size="9" font-family="sans-serif">✓ 2,410 tickets parsed in 1.4s. Sentiment: 88% positive.</text>
+        <text x="264" y="238" fill="#bae6fd" font-size="9" font-family="sans-serif">Top request: Automated mobile notifications.</text>
+        
+        <!-- Bottom Model Status -->
+        <rect x="204" y="265" width="396" height="40" rx="8" fill="#18181b" stroke="#27272a"/>
+        <circle cx="225" cy="285" r="5" fill="#4ade80"/>
+        <text x="238" y="289" fill="#a1a1aa" font-size="9" font-family="monospace">MODELS: GPT-4o · DeepSeek-V3 · Unified API Gateway</text>
+        
+
+  <!-- Bottom Details Overlay -->
+  <rect x="0" y="380" width="800" height="70" fill="#09090b" fill-opacity="0.85"/>
+  <line x1="0" y1="380" x2="800" y2="380" stroke="#27272a" stroke-width="1"/>
+
+  <!-- Category & Badges -->
+  <text x="32" y="410" fill="#38bdf8" font-size="10" font-family="'Space Mono', monospace" font-weight="bold" letter-spacing="1.5">PYTHON · OPENAI · DEEPSEEK</text>
+  <text x="32" y="432" fill="#f4f4f5" font-size="14" font-family="'PT Sans', sans-serif" font-weight="bold">AI Intelligent Assistants & Automation</text>
+
+  <!-- Pill Badge -->
+  <rect x="660" y="402" width="108" height="26" rx="6" fill="#38bdf8" fill-opacity="0.12" stroke="#38bdf8" stroke-width="1"/>
+  <text x="714" y="419" fill="#38bdf8" font-size="9" font-family="'Space Mono', monospace" font-weight="bold" text-anchor="middle" letter-spacing="1">MULTI-LLM</text>
+</svg>

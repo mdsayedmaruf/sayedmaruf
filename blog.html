@@ -8,8 +8,11 @@
   <meta property="og:title" content="Blog — Eliott"/>
   <meta property="og:type" content="website"/>
   <title>Blog — Eliott</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- Local vendor assets for 100% offline support with CDN fallback -->
+  <script src="vendor/tailwind.js"></script>
+  <script>if(!window.tailwind){document.write('<script src="https://cdn.tailwindcss.com"><\/script>')}</script>
+  <script defer src="vendor/alpine.min.js"></script>
+  <script>window.addEventListener('DOMContentLoaded',()=>{if(!window.Alpine){const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js';s.defer=true;document.head.appendChild(s)}})</script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet"/>
